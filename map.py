@@ -116,4 +116,8 @@ class Map:
                     self.uncover(new_x, new_y)
 
     def place_flag(self, x, y):
-        self.uncovered[y][x] = 'f'
+        if self.uncovered[y][x] == 'h':
+            self.uncovered[y][x] = 'f'
+        elif self.uncovered[y][x] == 'f':
+            self.uncovered[y][x] = 'h'
+
