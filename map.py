@@ -29,8 +29,8 @@ class Map:
         for y in range(self.height):
             for x in range(self.width):
                 if self.map[y][x] != -1:
-                    # check for boundaries:
 
+                    # check for boundaries:
                     # top
                     if y > 0:
                         if self.map[y - 1][x] == -1:
@@ -98,9 +98,13 @@ class Map:
 
         directions = [
             (0, -1),  # top
+            (1, -1),  # top right
             (1, 0),  # right
+            (1, 1),  # bottom right
             (0, 1),  # bottom
+            (-1, 1),  # bottom left
             (-1, 0),  # left
+            (-1, -1)  # top left
         ]
 
         # Check adjacent cells
