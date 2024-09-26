@@ -5,8 +5,8 @@
 Minesweeper-Py is a Python implementation of the classic Minesweeper game, utilizing the Pyglet library for graphics rendering. The game features a user-friendly interface and supports multiple difficulty levels.
 
 ## Screenshots
-![Minesweeper-Py Screenshot](assets/images/minesweeper-title-screen.png)
-![Minesweeper-Py Screenshot](assets/images/minesweeper-gameplay.png)
+<img src="assets/images/minesweeper-title-screen.png" alt="Minesweeper Title Screen" width="300">
+<img src="assets/images/minesweeper-gameplay.png" alt="Minesweeper Gameplay" height="400">
 
 ## Installation
 
