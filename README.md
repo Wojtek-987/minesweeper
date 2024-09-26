@@ -1,8 +1,8 @@
-# Minesweeper-Py
+# Minesweeper
 ## Python Minesweeper Game using Pyglet
 
 ## Overview
-Minesweeper-Py is a Python implementation of the classic Minesweeper game, utilizing the Pyglet library for graphics rendering. The game features a user-friendly interface and supports multiple difficulty levels.
+Minesweeper is a Python implementation of the classic Minesweeper game, utilizing the Pyglet library for graphics rendering. The game features a user-friendly interface and supports multiple difficulty levels.
 
 ## Screenshots
 <p>
@@ -23,7 +23,7 @@ pip install pyglet
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/yourusername/minesweeper-py.git
+git clone https://github.com/wojtek-987/minesweeper.git
 ```
 
 ### To run the game type the following into the terminal:
