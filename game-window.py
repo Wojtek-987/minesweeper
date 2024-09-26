@@ -1,4 +1,5 @@
 import pyglet
+from pyglet import image
 import ctypes
 
 from map import Map
@@ -164,9 +165,18 @@ window.set_caption('Minesweeper')
 # Create the menu
 menu = pyglet.graphics.Batch()
 
-menu_bg = pyglet.shapes.Rectangle(
-    x=0, y=0, width=window.width, height=window.height,
-    color=(255, 255, 255, 255), batch=menu)
+menu_bg_image = image.load('assets/images/minesweeper.png')
+menu_bg_sprite = pyglet.sprite.Sprite(menu_bg_image)
+
+# Calculate scale factors
+# scale_x = window.width / menu_bg_sprite.width
+scale_y = window.height / menu_bg_sprite.height
+
+# Set the sprite's scale to fill the window
+menu_bg_sprite.update(scale_x=scale_y, scale_y=scale_y)
+
+
+menu_bg_rect = pyglet.shapes.Rectangle(0, 0, window.width, window.height, color=(255, 255, 255, 200), batch=menu)
 
 menu_title = pyglet.text.Label(
     'Minesweeper', font_name='Cascadia Mono', font_size=65,
@@ -180,7 +190,7 @@ menu_difficulty_label = pyglet.text.Label(
 
 menu_difficulty_text_hitbox = pyglet.shapes.Rectangle(
     x=window.width // 4, y=180, width=window.width // 2, height=80,
-    color=(0, 0, 0, 50), batch=menu)
+    color=(255, 255, 255, 200), batch=menu)
 
 menu_difficulty_text = pyglet.text.Label(
     'EASY', font_name='Cascadia Mono', font_size=36,
@@ -369,6 +379,7 @@ def set_win_state(dt):
 def on_draw():
     window.clear()
     if minesweeper.state == 'menu':
+        menu_bg_sprite.draw()
         menu.draw()
     else:
         minesweeper.game.draw()
