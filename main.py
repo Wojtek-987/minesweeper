@@ -1,16 +1,44 @@
-# This is a sample Python script.
+from map import Map
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# create the window
+
+# display menu
+
+# initialize the game variables
+game_map = Map(10, 5)
+game_map.add_bombs(10)
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+# display the game in the window
+while True:
+    for y in range(5):
+        for x in range(10):
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+            spacing = ' '
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+            if game_map.uncovered[y][x] == 'v':
+                if game_map.map[y][x] == -1:
+                    spacing = ''
+
+                print('[' + spacing + str(game_map.map[y][x]), ']', end='')
+
+            elif game_map.uncovered[y][x] == 'f':
+                if game_map.map[y][x] == -1:
+                    spacing = ''
+
+                print('[ # ]', end='')
+
+            elif game_map.uncovered[y][x] == 'h':
+                print('[ - ]', end='')
+
+        print()
+
+    x = input('x: ')
+    y = input('y: ')
+    if game_map.uncover(int(x), int(y)) == 'bomb':
+        print('You lost!')
+        break
+
+    game_map.uncover(int(x), int(y))
+    # game_map.place_flag(int(x), int(y))
