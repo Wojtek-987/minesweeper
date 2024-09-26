@@ -23,7 +23,7 @@ pip install pyglet
 
 ### Clone the repository:
 ```bash
-git clone https://github.com/wojtek-987/minesweeper.git
+git clone https://github.com/Wojtek-987/minesweeper.git
 ```
 
 ### To run the game type the following into the terminal:
